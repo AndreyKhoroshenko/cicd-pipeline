@@ -14,5 +14,11 @@ pipeline {
       }
     }
 
+    stage('Build a docker image') {
+      steps {
+        sh 'docker.build("${env.IMAGE_NAME}:${env.BUILD_NUMBER}")'
+      }
+    }
+
   }
 }
