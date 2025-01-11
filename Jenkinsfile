@@ -4,8 +4,6 @@ pipeline {
     stage('Build') {
       agent any
       steps {
-        sh '''apt npm install
-'''
         sh '''chmod +x ./scripts/build.sh
 ./scripts/build.sh'''
       }
