@@ -1,6 +1,10 @@
 pipeline {
   agent any
   stages {
+    stage('Checkout') {
+      steps {
+        git(url: 'https://github.com/AndreyKhoroshenko/cicd-pipeline/', branch: 'main', credentialsId: 'AndreyKhoroshenko_id')
+      }
     stage('Build') {
       agent any
       steps {
