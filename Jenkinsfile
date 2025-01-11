@@ -1,10 +1,12 @@
 pipeline {
   agent any
   stages {
-    stage('build') {
+    stage('Build') {
+      agent any
       steps {
         sh '''npm install
-chmod +x ./scripts/build.sh
+'''
+        sh '''chmod +x ./scripts/build.sh
 ./scripts/build.sh'''
       }
     }
